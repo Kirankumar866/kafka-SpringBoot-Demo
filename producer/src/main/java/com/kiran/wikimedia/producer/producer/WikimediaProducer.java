@@ -1,4 +1,4 @@
-package com.kiran.kafka_demo.producer;
+package com.kiran.wikimedia.producer.producer;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,12 +10,12 @@ import static java.lang.String.format;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class KafkaProducer {
+public class WikimediaProducer {
     private final KafkaTemplate<String,String> kafkaTemplate;
 
     public void sendMessage(String msg){
-        //log.info(format("Sending message to firatTopic:: %s", msg));
-        kafkaTemplate.send("firstTopic",msg);
+        // log.info(format("Sending message to Wikimedia Stream Topic:: %s", msg));
+        kafkaTemplate.send("wikimedia-stream",msg);
 
 
     }
